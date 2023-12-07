@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestLoginPage {
     public static void main(String[] args) {
-        System.out.println(proceduraLogin("tomsmith", "SuperSecretPassword"));
+        System.out.println(proceduraLogin("tomsmith", "SuperSecretPassword!"));
 
     
 }
