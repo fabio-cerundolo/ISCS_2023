@@ -17,7 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestFile1 {
+public class TestLoginFile {
     public static void main(String[] args) {
         String filepath = "utenti.txt";
         ArrayList<Login> login = new ArrayList<>();
