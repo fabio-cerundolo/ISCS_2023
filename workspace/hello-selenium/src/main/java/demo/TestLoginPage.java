@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 
@@ -16,6 +17,9 @@ public class TestLoginPage {
         String messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
         System.out.println(messaggio_di_ritorno+ broswer);
         broswer="edge";
+        messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
+        System.out.println(messaggio_di_ritorno+ broswer);
+        broswer="firefox";
         messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
         System.out.println(messaggio_di_ritorno+ broswer);
 
@@ -30,6 +34,10 @@ private static String proceduraLogin(String user, String pass, String url, Strin
        switch(broswer){
            case "chrome":driver = new ChromeDriver();
                         System.setProperty("webdriver.chrome.driver", "chromedriver");
+                        
+                        break;
+            case "firefox":driver = new FirefoxDriver();
+                        System.setProperty("webdriver.gecko.driver", "geckodriver");
                         
                         break;
            default : driver = new org.openqa.selenium.edge.EdgeDriver();
