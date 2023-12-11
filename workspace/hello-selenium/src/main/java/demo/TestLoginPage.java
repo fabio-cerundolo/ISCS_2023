@@ -13,25 +13,25 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestLoginPage {
     public static void main(String[] args) {
         String url = "http://the-internet.herokuapp.com/login";
-        String broswer="chrome";
-        String messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
-        System.out.println(messaggio_di_ritorno+ broswer);
-        broswer="edge";
-        messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
-        System.out.println(messaggio_di_ritorno+ broswer);
-        broswer="firefox";
-        messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,broswer);
-        System.out.println(messaggio_di_ritorno+ broswer);
+        String browser="chrome";
+        String messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,browser);
+        System.out.println(messaggio_di_ritorno+ browser);
+        browser="edge";
+        messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,browser);
+        System.out.println(messaggio_di_ritorno+ browser);
+        browser="firefox";
+        messaggio_di_ritorno =proceduraLogin("tomsmith", "SuperSecretPassword!", url,browser);
+        System.out.println(messaggio_di_ritorno+ browser);
 
 
     
 }
 
-private static String proceduraLogin(String user, String pass, String url, String broswer) {
+private static String proceduraLogin(String user, String pass, String url, String browser) {
         String message=null;
         WebDriver driver =null;
        // WebDriver driver = new ChromeDriver();
-       switch(broswer){
+       switch(browser){
            case "chrome":driver = new ChromeDriver();
                         System.setProperty("webdriver.chrome.driver", "chromedriver");
                         

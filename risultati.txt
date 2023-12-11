@@ -1,0 +1,26 @@
+Reportato dal file utenti.txtMon Dec 11 12:02:17 CET 2023
+
+username: tomsmith password: SuperSecretPassword!
+Browser: firefox Time elapsed: 7381 msLogin Successfully: tomsmith SuperSecretPassword! 
+username: tomsmith password: SuperSecretPassword!
+Browser: edge Time elapsed: 4156 msLogin Successfully: tomsmith SuperSecretPassword! 
+username: tomsmith password: SuperSecretPassword!
+Browser: chrome Time elapsed: 3393 msLogin Successfully: tomsmith SuperSecretPassword! 
+username: tomsmith1 password: SuperSecretPassword
+Browser: edge Time elapsed: 4154 msUsername errato: tomsmith1 
+username: tomsmith1 password: SuperSecretPassword
+Browser: chrome Time elapsed: 3575 msUsername errato: tomsmith1 
+username: tomsmith1 password: SuperSecretPassword
+Browser: firefox Time elapsed: 6100 msUsername errato: tomsmith1 
+username: tomsmith password: SuperSecretPassword
+Browser: edge Time elapsed: 4069 msPassword errata: SuperSecretPassword 
+username: tomsmith password: SuperSecretPassword
+Browser: chrome Time elapsed: 3571 msPassword errata: SuperSecretPassword 
+username: tomsmith password: SuperSecretPassword
+Browser: firefox Time elapsed: 6050 msPassword errata: SuperSecretPassword 
+username: tomsmith1 password: SuperSecretPassword!
+Browser: edge Time elapsed: 4190 msUsername errato: tomsmith1 
+username: tomsmith1 password: SuperSecretPassword!
+Browser: chrome Time elapsed: 3465 msUsername errato: tomsmith1 
+username: tomsmith1 password: SuperSecretPassword!
+Browser: firefox Time elapsed: 6314 msUsername errato: tomsmith1 
