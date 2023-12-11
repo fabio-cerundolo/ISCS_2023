@@ -15,11 +15,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 public class TestFile {
     public static void main(String[] args) throws IOException {
         String filepath = "utenti.txt";
         ArrayList<Login> login = new ArrayList<>();
         String url = "http://the-internet.herokuapp.com/login";
+        
 
         // Impostazioni del sistema per il WebDriver
         
@@ -51,6 +54,7 @@ public class TestFile {
             System.out.println("Password: " + loginObj.getPassword());
             System.out.println("Browser: " + loginObj.getBrowser());
             System.out.println("-----------");
+            
             // Esegui il login per ciascun utente
             long start = System.currentTimeMillis();
             String message = proceduraLogin(loginObj.getUsername(), loginObj.getPassword(), url,
@@ -58,11 +62,11 @@ public class TestFile {
                     long end = System.currentTimeMillis();
                     long timeElapsed = end - start;
                     System.out.println("Time elapsed: " + timeElapsed + " ms");
-
+                    int statusCode = getURLStatusCode(url);
                     writer.write("username: " + loginObj.getUsername() + " password: " + loginObj.getPassword());
                     writer.newLine();
                     writer.write("Browser: " + loginObj.getBrowser() + " Time elapsed: " + timeElapsed +
-                    " ms");
+                    " ms "+" Status code: " + statusCode+" ");
                     writer.write(message);
                     writer.newLine();
                     
@@ -74,6 +78,7 @@ public class TestFile {
     private static String proceduraLogin(String user, String pass, String url, String browser) {
         String message = null;
         WebDriver driver = null;
+        
 
         try {
             switch (browser) {
@@ -121,5 +126,14 @@ public class TestFile {
             }
         }
         return message;
+    }
+        private static int getURLStatusCode(String urlString) throws IOException {
+        URL url = new URL(urlString);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        int statusCode = connection.getResponseCode();
+        connection.disconnect();
+        return statusCode;
     }
 }
